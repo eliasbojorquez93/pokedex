@@ -1,13 +1,23 @@
-import React from 'react';
-import { View, Text } from 'react-native';
+import React, { useEffect } from 'react';
+import { View, Text, StyleSheet } from 'react-native';
+import { useQuery } from '@apollo/client';
+import { POKEMON_DETAILS } from '../../graphql/queries';
 
 const Home = () => {
   return (
-      <View>
-          <Text>Home View</Text>
+    <View style={styles.container}>
+      <View style={styles.screen}>
+        <Text>Quesoooo</Text>
       </View>
-  );  
+    </View>
+  );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+});
 
 export default Home;
 
