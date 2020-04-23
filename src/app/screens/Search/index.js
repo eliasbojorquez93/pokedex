@@ -21,8 +21,6 @@ const Search = ({ route }) => {
     }
   });
 
-  console.log(data);
-
   useEffect(() => {
     if (!loading && !error) {
       data.search.flavor_text_entries.map(item => {

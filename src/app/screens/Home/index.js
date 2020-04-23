@@ -19,7 +19,6 @@ const Home = ({ navigation }) => {
   const goToPokemon = (query) => navigation.navigate('Search', { query });
 
   const handleLoadMore = () => {
-    console.log('que pex');
     if (data?.next) {
       setRefresing(true);
       fetch(data.next)
