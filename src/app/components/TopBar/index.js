@@ -1,23 +1,32 @@
 import React from 'react';
-import { View, Dimensions, StyleSheet } from 'react-native';
+import { View, Dimensions, StyleSheet, Image, TouchableOpacity } from 'react-native';
+import { navigate } from '../../config/rootNavigation';
 
-const screenWidth = Math.round(Dimensions.get('window').width);
 const screenHeight = Math.round(Dimensions.get('window').height);
 const tenPercent = (screenHeight / 100) * 10;
 
-const TopBar = () => (
-  <View style={styles.topContainer}>
+const TopBar = () => {
+  const goToPokemon = () => navigate('Home');
+
+  return (
+    <View style={styles.topContainer}>
     <View style={styles.middleTop} />
     <View style={styles.bottom}>
       <View style={styles.middleBottom} />
       <View style={styles.triangle} />
     </View>
-    <View style={styles.reader} />
+    <TouchableOpacity
+      style={styles.reader}
+      onPress={goToPokemon}
+    >
+      <Image style={styles.home} source={require('../../../../public/imgs/home.png')} />
+    </TouchableOpacity>
     <View style={styles.red} />
     <View style={styles.yellow} />
     <View style={styles.green} />
   </View >
-)
+  )
+}
 
 const styles = StyleSheet.create({
   topContainer: {
@@ -89,6 +98,15 @@ const styles = StyleSheet.create({
     marginTop: -7,
     left: 110,
   },
+  home: {
+    width: 20,
+    height: 20,
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    marginTop: -10,
+    marginLeft: -10,
+  }
 })
 
 export default TopBar;
