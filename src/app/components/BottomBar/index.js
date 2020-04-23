@@ -54,6 +54,8 @@ const styles = StyleSheet.create({
     paddingHorizontal: 15,
     borderTopColor: '#F3F3F3',
     borderTopWidth: 1,
+    borderBottomColor: '#9D2435',
+    borderBottomWidth: 5,
   },
   searchButton: {
     position: 'absolute',
